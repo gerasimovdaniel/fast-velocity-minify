@@ -1,11 +1,12 @@
-name: Publish
+name: publish-plugin
+run-name: Publish
 on:
   push:
     tags:
       - 'v*'
 jobs:
   build:
-    name: Publish plugin...
+    name: Publish plugin
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
