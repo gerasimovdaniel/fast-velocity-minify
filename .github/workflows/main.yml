@@ -13,7 +13,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       with:
-        ref: modified
+        path: modified
     - name: Build
       shell: bash
       run: git archive --format=zip --prefix="fast-velocity-minify/" HEAD > ${{ github.workspace }}/fast-velocity-minify.zip
