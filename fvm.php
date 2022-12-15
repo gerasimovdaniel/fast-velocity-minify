@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Fast Velocity Minifyy
+Plugin Name: Fast Velocity Minifyyy
 Plugin URI: http://fastvelocity.com
 Description: Improve your speed score on GTmetrix, Pingdom Tools and Google PageSpeed Insights by merging and minifying CSS and JavaScript files into groups, compressing HTML and other speed optimizations. 
 Author: Raul Peixoto
