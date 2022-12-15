@@ -14,15 +14,15 @@ jobs:
       shell: bash
       run: git archive --format=zip --prefix="fast-velocity-minify/" HEAD > ${{ github.workspace }}/fast-velocity-minify.zip
     - name: Upload zip file to GitHub actions artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: fast-velocity-minify.zip
-          path: ${{ github.workspace }}/fast-velocity-minify.zip
+      uses: actions/upload-artifact@v2
+      with:
+        name: fast-velocity-minify.zip
+        path: ${{ github.workspace }}/fast-velocity-minify.zip
     - name: Create GitHub release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: ${{ github.ref }}
-          files: fast-velocity-minify.zip
-          body: 'Release'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.ref }}
+        files: fast-velocity-minify.zip
+        body: 'Release'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
