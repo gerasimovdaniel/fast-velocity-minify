@@ -8,7 +8,8 @@ jobs:
     name: Publish plugin
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Build
       shell: bash
       run: git archive --format=zip --prefix="fast-velocity-minify/" HEAD > ${{ github.workspace }}/fast-velocity-minify.zip
