@@ -4,6 +4,7 @@
 # Do not export git service files.
 .gitattributes export-ignore
 .gitignore export-ignore
+.github export-ignore
 
 # Denote all files that are truly binary and should not be modified.
 *.png binary
