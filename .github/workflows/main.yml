@@ -11,12 +11,17 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       shell: bash
-      run: git archive --format=zip --prefix="fast-velocity-minify/" HEAD > fast-velocity-minify.zip
-    - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: fast-velocity-minify.zip
-        tag: ${{ github.ref }}
-        overwrite: true
-        body: "Release"
+      run: git archive --format=zip --prefix="fast-velocity-minify/" HEAD > ${{ github.workspace }}/fast-velocity-minify.zip
+    - name: Upload zip file to GitHub actions artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: fast-velocity-minify.zip
+          path: ${{ github.workspace }}/fast-velocity-minify.zip
+    - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          files: fast-velocity-minify.zip
+          body: 'Release'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
